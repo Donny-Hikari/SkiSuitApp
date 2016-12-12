@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TemperatureActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <RelativeLayout xmlns:circular="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin">
+
+            <com.donny.skisuit.CircularSlider
+                android:id="@+id/id_temperature"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp"
+                circular:angle="1.57"
+                circular:border_color="#505090"
+                circular:border_thickness="14dp"
+                circular:thumb_color="#30AEFF"
+                circular:thumb_size="24dp" />
+
+            <TextView
+                android:id="@+id/id_dispNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="25°"
+                android:textColor="@color/tptOffColor"
+                android:textSize="70sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Off"
+                android:textSize="23sp" />
+
+            <Switch
+                android:id="@+id/id_mainSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClickMainSwitch"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="23sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="On"
+                android:textSize="23sp" />
+
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/id_scheduleTime"
+            style="@style/temperature_Settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickScheduleTime"
+            android:text="预约时间"
+            android:textSize="23sp" />
+
+        <RelativeLayout
+            android:id="@+id/id_startTime"
+            style="@style/temperature_Settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/timebutton_selector"
+            android:clickable="true"
+            android:onClick="onClickSetSchedule">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="开启时间"
+                android:textColor="#000000"
+                android:textSize="23sp" />
+
+            <TextView
+                android:id="@+id/id_beginHourMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="10:00"
+                android:textSize="23sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/id_endTime"
+            style="@style/temperature_Settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/timebutton_selector"
+            android:clickable="true"
+            android:onClick="onClickSetSchedule">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="关闭时间"
+                android:textColor="#000000"
+                android:textSize="23sp" />
+
+            <TextView
+                android:id="@+id/id_endHourMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="22:00"
+                android:textSize="23sp" />
+        </RelativeLayout>
+
+        <Switch
+            android:id="@+id/id_timer"
+            style="@style/temperature_Settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickTimer"
+            android:text="定时器"
+            android:textSize="23sp" />
+
+        <RelativeLayout
+            android:id="@+id/id_timer_time"
+            style="@style/temperature_Settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickSetTimer"
+            android:background="@drawable/timebutton_selector"
+            android:clickable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="定时时长"
+                android:textColor="#000000"
+                android:textSize="23sp" />
+
+            <TextView
+                android:id="@+id/id_timerHourMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="3:00"
+                android:textSize="23sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>
